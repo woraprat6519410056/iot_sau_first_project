@@ -1,6 +1,8 @@
 // ignore_for_file: sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:iot_sau_first_project/views/login.dart';
+import 'package:iot_sau_first_project/views/signup_ui.dart';
 
 class WelcomeUi extends StatefulWidget {
   const WelcomeUi({super.key});
@@ -44,7 +46,15 @@ class _WelcomeUiState extends State<WelcomeUi> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    //เปิดหน้าจอแบบย้อนกลับได้
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginUi(),
+                      ),
+                    );
+                  },
                   child: Text(
                     'Login',
                     style: TextStyle(
@@ -54,9 +64,7 @@ class _WelcomeUiState extends State<WelcomeUi> {
                   ),
                   style: OutlinedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusDirectional.circular(
-                        7.0
-                        ),
+                      borderRadius: BorderRadiusDirectional.circular(7.0),
                     ),
                   ),
                 ),
@@ -64,24 +72,26 @@ class _WelcomeUiState extends State<WelcomeUi> {
                   width: MediaQuery.of(context).size.width * 0.035,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SignupUi(),
+                      ),
+                    );
+                  },
                   child: Text(
-                    'Sigup'
+                    'Sigup',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.white, 
+                      color: Colors.white,
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                    fixedSize: Size(
-                      150.0,
-                      75.0
-                    ),
+                    fixedSize: Size(90.0, 35.0),
                     backgroundColor: Colors.black,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusDirectional.circular(
-                        7.0
-                        ),
+                      borderRadius: BorderRadiusDirectional.circular(7.0),
                     ),
                   ),
                 ),
